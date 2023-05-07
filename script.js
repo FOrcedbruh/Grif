@@ -127,3 +127,40 @@ let options = {
   })
 
 
+
+  let firstNew = document.querySelector('.first-new p');
+  let secondNew = document.querySelector('.second-new p');
+  let thirdNew = document.querySelector('.third-new p');
+  let firstNewOpenTitle = document.querySelector('#firstNewTitle');
+  let secondNewOpenTitle = document.querySelector('#secondNewTitle');
+  let thirdNewOpenTitle = document.querySelector('#thirdNewTitle');
+  
+
+  firstNewOpenTitle.innerHTML = firstNew.innerHTML;
+  secondNewOpenTitle.innerHTML = secondNew.innerHTML;
+  thirdNewOpenTitle.innerHTML = thirdNew.innerHTML;
+
+
+
+  const newsOpenContainer = document.querySelector('div.news-open');
+  const news = document.querySelector('.first-small-top-section');
+  const newsOpenBack = document.querySelector('.news-open-back');
+
+
+  news.addEventListener('click', () => {
+    newsOpenContainer.classList.add('open');
+  });
+
+  newsOpenBack.addEventListener('click', () => {
+    newsOpenContainer.classList.remove('open');
+  });
+
+
+
+
+
+
+
+
+
+
