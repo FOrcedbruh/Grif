@@ -8,7 +8,7 @@ header {
     width: 100%;
     height: 20%;
     justify-self: flex-start;
-    gap: 1400px;
+    gap: 70%;
     position: fixed;
     background-color: transparent;
     backdrop-filter: blur(10px);
@@ -29,7 +29,7 @@ header.active {
     transform: scale(0.7) translateX(-20%);
 }
 .menu-bar {
-    z-index: 8;
+    z-index: 9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -290,11 +290,12 @@ footer p {
     padding-left: 320px;
 }
 section.iphone {
-    width: 90%;
+    width: 80%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-top: 180px;
+    gap: 75px;
 }
 section.iphone .left-iphone-div {
     width: 40%;
@@ -307,9 +308,6 @@ section.iphone div p {
     font-size: 22px;
     color: #fff;
     line-height: 50px;
-}
-section.iphone img {
-    transform: scale(0.7);
 }
 .obs {
     opacity: 0;

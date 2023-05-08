@@ -12,6 +12,7 @@ div.news-open {
     transition: transform .5s ease, opacity .6s ease;
     opacity: 0;
 }
+
 div.news-open.open {
     z-index: 10;
     transform: translateY(0);
@@ -41,6 +42,9 @@ section.news-blocks {
     padding-bottom: 80px;
     overflow-y: scroll;
     height: 600px;
+}
+section.news-blocks::-webkit-scrollbar {
+    visibility: hidden;
 }
 section.news-blocks div.news-open-block {
     background: linear-gradient(92.95deg, #1E1E1E 0%, #111111 100%);

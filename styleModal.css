@@ -1,8 +1,8 @@
 .modal {
     width: 620px;
     height: 100%;
-    background-color: transparent;
-    backdrop-filter: blur(20px);
+    background: linear-gradient(176.35deg, #0C0015 0%, rgba(0, 0, 0, 0.57) 40.31%);
+    backdrop-filter: blur(25px);
     position: absolute;
     align-self: flex-end;
     transform: translateX(620px) scale(0);
