@@ -19,7 +19,7 @@ const header = document.querySelector('header');
 const password_2 = document.querySelector('#password_2');
 
 
-
+// ползунок в окне авторизации
 
 rememberToggle.addEventListener('click', () => {
     rememberToggle.classList.toggle('active');
@@ -33,7 +33,7 @@ rememberToggleDop.addEventListener('click', () => {
 });
 
 
-
+// анимация переключения логин на  сайнап
 
 goToLogin.addEventListener('click', () => {
     login.classList.add('active');
@@ -42,6 +42,19 @@ goToLogin.addEventListener('click', () => {
 })
 
 
+closeLogin.addEventListener('click', ()=> {
+    login.classList.remove('active');
+    loginForm.classList.remove('active');
+    HeaderWindowSignUp.classList.remove('scale-active');
+})
+
+window.addEventListener('keydown', (e) => {
+   if (e.code === "Escape") {
+    login.classList.remove('active');
+    loginForm.classList.remove('active');
+    HeaderWindowSignUp.classList.remove('scale-active');
+   }
+})
 
 logBtn.addEventListener('click', () => {
     loginForm.classList.add('scale_0');
@@ -52,7 +65,7 @@ signBtn.addEventListener('click', () => {
     signupForm.classList.remove('active');
 });
 
-
+// просмотр пароля по клику
 
 eye.forEach(e => {
     e.addEventListener('click', () => {
@@ -73,14 +86,8 @@ eye.forEach(e => {
 
 
 
-closeLogin.addEventListener('click', ()=> {
-    login.classList.remove('active');
-    loginForm.classList.remove('active');
-    HeaderWindowSignUp.classList.remove('scale-active');
-})
 
-
-
+// анимация для menu-bar и модального окна
 
 const burger = document.querySelector('.menu-bar'),
     lines = document.querySelectorAll('.lines');
@@ -103,11 +110,12 @@ window.addEventListener('scroll', () => {
     }
 })
 
+// обсервер
 
 let options = {
     root: null,
     rootMargin: "5px",
-    threshold: 0.1,
+    threshold: 0.2,
   };
 
   let callback = function(entries, observer) {
@@ -126,7 +134,7 @@ let options = {
     observer.observe(target);
   })
 
-
+// начтройки для новостей
 
   let firstNew = document.querySelector('.first-new p');
   let secondNew = document.querySelector('.second-new p');
@@ -154,6 +162,11 @@ let options = {
   newsOpenBack.addEventListener('click', () => {
     newsOpenContainer.classList.remove('open');
   });
+
+
+
+
+
 
 
 
