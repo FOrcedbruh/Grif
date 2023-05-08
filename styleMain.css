@@ -327,3 +327,8 @@ section.iphone div p {
 .iphone-jpegs {
     display: flex;
 }
+a.topScroll {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
