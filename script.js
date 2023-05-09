@@ -98,6 +98,7 @@ burger.addEventListener('click', () => {
         e.classList.toggle('active');
     })
     modalMenu.classList.toggle('active');
+    settingsContainer.classList.remove('active');
 });
 const logo = document.querySelector('.logo');
 
@@ -162,8 +163,67 @@ let options = {
   newsOpenBack.addEventListener('click', () => {
     newsOpenContainer.classList.remove('open');
   });
+ window.addEventListener('keydown', (e) => {
+    if (e.code === "Escape") {
+        newsOpenContainer.classList.remove('open');
+    }
+  });
+
+// настройка для музыки
 
 
+let audio = document.getElementById('audio');
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === "`") {
+        audio.play();
+    }
+    
+    if (e.key === "~") {
+        audio.pause();
+    }
+});
+
+
+// громкость музыки 
+
+
+let plusVolume = document.getElementById('plus');
+let minusVolume = document.getElementById('minus');
+
+
+plusVolume.addEventListener('click', () => {
+    audio.volume += 0.2;
+});
+minusVolume.addEventListener('click', () => {
+    audio.volume -= 0.2;
+});
+
+
+// modal settings 
+
+
+
+let settings = document.getElementById('settings');
+let settingsContainer = document.querySelector('.settings');
+
+settings.addEventListener('click', () => {
+    settingsContainer.classList.toggle('active');
+})
+
+
+// тема 
+
+
+let themeSwitch = document.querySelector('.theme-switch');
+let moon = document.getElementById('moon');
+let sun = document.getElementById('sun');
+
+themeSwitch.addEventListener('click', () => {
+    sun.classList.toggle('active');
+    moon.classList.toggle('active');
+    
+});
 
 
 

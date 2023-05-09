@@ -32,6 +32,10 @@ html, body {
     height: 500px;
     background: linear-gradient(135deg, #1B1B1B 0%, #000000 100%);
     border-radius: 27px;
+    opacity: 0;
+}
+.quiz.active {
+    opacity: 1;
 }
 p {
     font-family: 'Inter';
@@ -68,4 +72,29 @@ p {
 }
 ::selection{
     background-color: rgba(174, 0, 255, 0.514);
+}
+
+section.start {
+    position: absolute;
+    margin-top: 50%;
+    z-index: 11;
+}
+section.start button {
+    background-color: #541585;
+    outline: none;
+    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+
+    color: #FFFFFF;
+    border-radius: 20px;
+    width: 200px;
+    height: 60px;
+    cursor: pointer;
+}
+section.start button.active {
+    opacity: 0;
 }

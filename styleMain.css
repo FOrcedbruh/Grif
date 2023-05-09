@@ -6,7 +6,7 @@ header {
     align-items: center;
     flex-direction: row;
     width: 100%;
-    height: 20%;
+    height: 10%;
     justify-self: flex-start;
     gap: 70%;
     position: fixed;
@@ -43,32 +43,35 @@ header.active {
     height: 5px;
     background-color: aliceblue;
     border-radius: 10px;
-    transition: transform .5s ease;
+    transition: transform .5s ease, background-color .7s ease;
 }
 .line_1.active {
     transform: rotate(45deg);
     position: absolute;
+    background-color: #c038ff;
 }
 .menu-bar .line_2 {
     width: 60px;
     height: 5px;
     background-color: aliceblue;
     border-radius: 10px;
-    transition: opacity .5s ease;
+    transition: opacity .5s ease, background-color .7s ease;
 }
 .menu-bar .line_3 {
     width: 60px;
     height: 5px;
     background-color: aliceblue;
     border-radius: 10px;
-    transition: transform .5s ease;
+    transition: transform .5s ease, background-color .7s ease;
 }
 .line_3.active {
     transform: rotate(-45deg);
     position: absolute;
+    background-color: #c038ff;
 }
 .line_2.active.active {
     opacity: 0;
+    background-color: #c038ff;
 }
 .infinityText {
     position: relative;
@@ -201,6 +204,7 @@ img.big-top-section-grif {
     background: linear-gradient(132.5deg, #FCFCFC 0%, rgba(217, 217, 217, 0.29) 100%);
     border-radius: 30px;
     transition: transform .4s ease;
+    cursor: pointer;
 }
 .one-child-second-small:hover,  .second-child-second-small:hover {
     transform: scale(1.05);

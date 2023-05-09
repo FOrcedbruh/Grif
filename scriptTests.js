@@ -74,3 +74,105 @@ for (var i = 0; i < starsCount; i++) {
 addEventListener('resize', () => {
     resizeCanvas(innerWidth, innerHeight);
 })	
+
+
+
+
+// тесты 
+
+let Quiz = {
+    question1: "На каких уровнях модели OSI работает межсетевой экран ?",
+    answer1: "сетевой/транспортный",
+    answer2: "физический/сетевой",
+    answer3: "транспортный/канальный",
+    answer4: "канальный/прикладной",
+
+
+    question2: "Самый популярный язык программирования  ? ",
+    answer2_1: "JavaScript",
+    answer2_2: "C++",
+    answer2_3: "GO",
+    answer2_4: "Phython",
+
+    question3: " Основной ГОСТ по защите информации  ? ",
+    answer3_1: "50577-2018",
+    answer3_2: "50922-2006",
+    answer3_3: "50462-2009",
+    answer3_4: "53114-2008",
+
+    question4: "Основная библиотека JS ? ",
+    answer4_1: "VueJS",
+    answer4_2: "Lume",
+    answer4_3: "React",
+    answer4_4: "Phython",
+}
+
+let question = document.querySelector('.question p');
+let answer_1 = document.querySelector('.answer1 p');
+let answer_2 = document.querySelector('.answer2 p');
+let answer_3 = document.querySelector('.answer3 p');
+let answer_4 = document.querySelector('.answer4 p');
+
+let answerClick = document.querySelectorAll('.ans-clicker');
+
+
+
+
+answerClick.forEach(element => {
+    let counter = 0;
+    element.addEventListener('click', () => {
+        counter++;
+        if (counter < 5) {
+            if (counter === 1) {
+                question.innerHTML = Quiz.question1;
+                answer_1.innerHTML = Quiz.answer1;
+                answer_2.innerHTML = Quiz.answer2;
+                answer_3.innerHTML = Quiz.answer3;
+                answer_4.innerHTML = Quiz.answer4;
+            };
+            if (counter === 2) {
+                question.innerHTML = Quiz.question2;
+                answer_1.innerHTML = Quiz.answer2_1;
+                answer_2.innerHTML = Quiz.answer2_2;
+                answer_3.innerHTML = Quiz.answer2_3;
+                answer_4.innerHTML = Quiz.answer2_4;
+            };
+            if (counter === 3) {
+                question.innerHTML = Quiz.question3;
+                answer_1.innerHTML = Quiz.answer3_1;
+                answer_2.innerHTML = Quiz.answer3_2;
+                answer_3.innerHTML = Quiz.answer3_3;
+                answer_4.innerHTML = Quiz.answer3_4;
+            };
+            if (counter === 4) {
+                question.innerHTML = Quiz.question4;
+                answer_1.innerHTML = Quiz.answer4_1;
+                answer_2.innerHTML = Quiz.answer4_2;
+                answer_3.innerHTML = Quiz.answer4_3;
+                answer_4.innerHTML = Quiz.answer4_4;
+            };
+        }
+        
+        });
+        
+   
+});
+
+// start tests 
+
+
+const StartBtn = document.querySelector('.start button');
+const test = document.querySelector('.quiz');
+
+StartBtn.addEventListener('click', () => {
+    StartBtn.classList.add('active');
+    test.classList.add('active');
+    
+    
+});
+
+
+
+
+
+

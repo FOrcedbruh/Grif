@@ -1,20 +1,22 @@
 .modal {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     width: 620px;
     height: 100%;
-    background: linear-gradient(176.35deg, #0C0015 0%, rgba(0, 0, 0, 0.57) 40.31%);
-    backdrop-filter: blur(25px);
-    position: absolute;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    position: fixed;
     align-self: flex-end;
     transform: translateX(620px) scale(0);
+    gap: 40px;
 }
 .modal.active {
     transform: translateX(0) scale(1);
-    position: fixed;
 }
 .modal-cards {
     margin-top: 150px;
     width: 100%;
-    height: 270px;
     display: flex;
     flex-direction: column;
     gap: 60px;
@@ -28,4 +30,103 @@
     line-height: 52px;
     color: #FFFFFF;
     text-decoration: none;
+    cursor: pointer;
+}
+section.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    min-height: 40%;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    gap: 50px;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+section.settings.active {
+    opacity: 1;
+}
+section.settings section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20%;
+}
+section.settings  section p {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+section.settings section p span#doc-music {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 12px;
+    color: #bbbbbb;
+}
+section.settings section p span.doc-el {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 12px;
+    color: #c038ff;
+}
+.volume {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30%;
+}
+#plus {
+    color: #c038ff;
+    transform: scale(3);
+    transition: transform .5s ease;
+    cursor: pointer;
+}
+#minus {
+    color: #c038ff;
+    transform: scale(3);
+    transition: transform .5s ease;
+    cursor: pointer;
+}
+#minus:hover, #plus:hover {
+    transform: scale(4);
+}
+.theme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.theme-switch {
+    cursor: pointer;
+}
+#moon, #sun {
+    position: absolute;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+}
+#sun {
+    transform: scale(0);
+    transition: transform .5s ease;
+}
+#sun.active {
+    transform: scale(1);
+}
+#moon {
+    transform: scale(1);
+    transition: transform .5s ease;
+}
+#moon.active {
+    transform: scale(0);
 }
