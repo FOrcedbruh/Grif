@@ -115,50 +115,17 @@ let answer_4 = document.querySelector('.answer4 p');
 
 let answerClick = document.querySelectorAll('.ans-clicker');
 
-
+let counter = 0;
 
 
 answerClick.forEach(element => {
-    let counter = 0;
     element.addEventListener('click', () => {
         counter++;
-        if (counter < 5) {
-            if (counter === 1) {
-                question.innerHTML = Quiz.question1;
-                answer_1.innerHTML = Quiz.answer1;
-                answer_2.innerHTML = Quiz.answer2;
-                answer_3.innerHTML = Quiz.answer3;
-                answer_4.innerHTML = Quiz.answer4;
-            };
-            if (counter === 2) {
-                question.innerHTML = Quiz.question2;
-                answer_1.innerHTML = Quiz.answer2_1;
-                answer_2.innerHTML = Quiz.answer2_2;
-                answer_3.innerHTML = Quiz.answer2_3;
-                answer_4.innerHTML = Quiz.answer2_4;
-            };
-            if (counter === 3) {
-                question.innerHTML = Quiz.question3;
-                answer_1.innerHTML = Quiz.answer3_1;
-                answer_2.innerHTML = Quiz.answer3_2;
-                answer_3.innerHTML = Quiz.answer3_3;
-                answer_4.innerHTML = Quiz.answer3_4;
-            };
-            if (counter === 4) {
-                question.innerHTML = Quiz.question4;
-                answer_1.innerHTML = Quiz.answer4_1;
-                answer_2.innerHTML = Quiz.answer4_2;
-                answer_3.innerHTML = Quiz.answer4_3;
-                answer_4.innerHTML = Quiz.answer4_4;
-            };
-        }
-        
+        Tests();
         });
         
    
 });
-
-// start tests 
 
 
 const StartBtn = document.querySelector('.start button');
@@ -167,10 +134,38 @@ const test = document.querySelector('.quiz');
 StartBtn.addEventListener('click', () => {
     StartBtn.classList.add('active');
     test.classList.add('active');
-    
-    
 });
 
+let Tests = () => {
+    if (counter == 0) {
+        question.innerHTML = Quiz.question1;
+        answer_1.innerHTML = Quiz.answer1;
+        answer_2.innerHTML = Quiz.answer2;
+        answer_3.innerHTML = Quiz.answer3;
+        answer_4.innerHTML = Quiz.answer4;
+    };
+    if (counter == 1) {
+        question.innerHTML = Quiz.question2;
+        answer_1.innerHTML = Quiz.answer2_1;
+        answer_2.innerHTML = Quiz.answer2_2;
+        answer_3.innerHTML = Quiz.answer2_3;
+        answer_4.innerHTML = Quiz.answer2_4;
+    };
+    if (counter == 2) {
+        question.innerHTML = Quiz.question3;
+        answer_1.innerHTML = Quiz.answer3_1;
+        answer_2.innerHTML = Quiz.answer3_2;
+        answer_3.innerHTML = Quiz.answer3_3;
+        answer_4.innerHTML = Quiz.answer3_4;
+    };
+    if (counter == 3) {
+        question.innerHTML = Quiz.question4;
+        answer_1.innerHTML = Quiz.answer4_1;
+        answer_2.innerHTML = Quiz.answer4_2;
+        answer_3.innerHTML = Quiz.answer4_3;
+        answer_4.innerHTML = Quiz.answer4_4;
+    };
+}
 
 
 
