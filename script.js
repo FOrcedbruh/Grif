@@ -46,6 +46,7 @@ closeLogin.addEventListener('click', ()=> {
     login.classList.remove('active');
     loginForm.classList.remove('active');
     HeaderWindowSignUp.classList.remove('scale-active');
+
 })
 
 window.addEventListener('keydown', (e) => {
@@ -110,6 +111,16 @@ window.addEventListener('scroll', () => {
         logo.classList.remove('active');
     }
 })
+
+
+document.addEventListener('keydown', (e) => {
+    if (e.code === "Escape") {
+        modalMenu.classList.remove('active');
+        lines.forEach(e => {
+            e.classList.remove('active');
+        })
+    }
+});
 
 // обсервер
 
@@ -214,6 +225,10 @@ settings.addEventListener('click', () => {
 
 // тема 
 
+let styleCss = document.getElementById('styleCss');
+let styleMainCss = document.getElementById('styleCss');
+let styleModalCss = document.getElementById('styleCss');
+let styleOpenNewsCss = document.getElementById('styleCss');
 
 let themeSwitch = document.querySelector('.theme-switch');
 let moon = document.getElementById('moon');
@@ -222,8 +237,26 @@ let sun = document.getElementById('sun');
 themeSwitch.addEventListener('click', () => {
     sun.classList.toggle('active');
     moon.classList.toggle('active');
-    
+    if (styleCss.getAttribute('href') === 'style.css') {
+        styleCss.setAttribute('href', 'styleL.css');
+        styleMainCss.setAttribute('href', 'styleMainL.css');
+        styleModalCss.setAttribute('href', 'styleModalL.css');
+        styleOpenNewsCss.setAttribute('href', 'styleOpenNewsL.css');
+    if (styleCss.getAttribute('href') === "styleL.css") {
+        styleCss.setAttribute('href', 'style.css');
+        styleMainCss.setAttribute('href', 'styleMain.css');
+        styleModalCss.setAttribute('href', 'styleModal.css');
+        styleOpenNewsCss.setAttribute('href', 'styleOpenNews.css');
+    }
+    }
 });
+
+
+
+
+
+
+
 
 
 

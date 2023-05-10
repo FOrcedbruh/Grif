@@ -24,7 +24,6 @@ body {
     max-width: 100%;
     overflow-x: hidden;
 }
-
 .log-in {
     z-index: 10;
     position: fixed;
@@ -85,19 +84,24 @@ body {
 }
 .login-window {
     padding-left: 55px;
+    height: 100%;
 }
 .main_part {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 50%;
+    height: 100%;
 }
 .login-form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     border: 2px solid rgba(165, 151, 179, 0.81);
     border-radius: 30px;
     width: 415px;
+    height: 80%;
     opacity: 0;
     transition: opacity .4s ease-in  0.5s, transform ease-in-out  .5s;
     transform: scale(0.2);
@@ -111,49 +115,7 @@ body {
 .login-form.scale_0 {
     transform: scale(0);
 }
-.login-form .another-src {
-    display: flex;
-    flex-direction: column;
 
-}
-.another-src {
-    padding-top: 46px;
-}
-.another-src p {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 130%;
-    /* or 23px */
-
-    text-align: center;
-
-    color: #FFFFFF;
-
-
-color: #FFFFFF;
-}
-.buttons-src {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-}
-.login-form .another-src button {
-    width: 75px;
-    height: 75px;
-    border-radius: 20px;
-    border: 2px solid rgba(165, 151, 179, 0.81);
-    background: linear-gradient(123.64deg, rgba(255, 255, 255, 0) -22.38%, rgba(255, 255, 255, 0.039) 70.38%);
-    backdrop-filter: blur(21px);
-    outline: none;
-    color: #fff;
-}
-.login-form .another-src button .icons {
-    width: 25px;
-    height: 25px;
-
-}
 
 
 .header-window {
@@ -163,6 +125,8 @@ color: #FFFFFF;
     align-items: center;
     transform: scale(0);
     transition: transform ease .4s 0.3s;
+    width: 100%;
+    height: 15%;
 }
 .header-window.scale-active {
     transform: scale(1);
@@ -171,8 +135,7 @@ color: #FFFFFF;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
-    font-size: 30px;
-    line-height: 130%;
+    font-size: 20px;
 
 
     color: #FFFFFF;
@@ -181,22 +144,18 @@ color: #FFFFFF;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 24px; 
 
     text-align: center;   
 
     color: #CFD0DC;
 }
-.or {
-    color: #FFFFFF;
-}
 form.inputs {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
-    padding-bottom: 45px;
+    gap: 1em;
 }
 form.inputs div input {
     width: 350px;

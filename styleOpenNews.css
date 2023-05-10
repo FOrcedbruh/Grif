@@ -23,15 +23,21 @@ img#news-grif {
 }
 img#news-line {
     padding-top: 28px;
+    width: 80%;
 }
-p.news-open-p {
-    transform: translateX(6%);
+ul.news-open-p {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 50%;
+    justify-content: center;
+}
+ul.news-open-p li{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 42px;
     line-height: 51px;
-    letter-spacing: 3.23em;
     color: #FFFFFF;
 }
 section.news-blocks {
