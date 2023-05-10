@@ -58,8 +58,11 @@ section.news-blocks div.news-open-block {
     border-radius: 50px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     min-height: 230px;
+    gap: 10%;
 }
+
 section.news-blocks div p {
     color: #fff;
     font-family: 'Inter';
