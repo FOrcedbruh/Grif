@@ -311,7 +311,7 @@ section.iphone div p {
     font-family: 'Inter';
     font-size: 22px;
     color: #fff;
-    line-height: 50px;
+    line-height: 1.8em;
 }
 .obs {
     opacity: 0;
