@@ -5,6 +5,7 @@ div.news-open {
     align-items: center;
     position: fixed;
     margin-top: 80px;
+    max-height: 90%;
     width: 60%;
     background: linear-gradient(164.44deg, #1B1B1B 0%, #070707 50.52%, #000000 100%);
     border-radius: 80px;
@@ -59,10 +60,9 @@ section.news-blocks div.news-open-block {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 230px;
+    max-height: 240px;
     gap: 10%;
 }
-
 section.news-blocks div p {
     color: #fff;
     font-family: 'Inter';
@@ -84,4 +84,14 @@ div.news-open-image {
 }
 .news-open-back:hover {
     transform: translate(100px, -60px) scale(1.2);
+}
+section.BlurforOpenNews {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(20px);
+    z-index: -1;
+}
+section.BlurforOpenNews.active {
+    z-index: 9;
 }

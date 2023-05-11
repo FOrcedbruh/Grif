@@ -22,6 +22,20 @@ let options = {
     observer.observe(target);
   })
 
+  // переход обратно на index.html
+
+
+  let backBtn = document.querySelector('.back');
+
+backBtn.addEventListener('click', () => {
+  window.location.href = "index.html";
+});
+window.addEventListener('keyup', (e) => {
+  if (e.code == "Escape") {
+    window.location.href = "index.html";
+  }
+});
+
 
 
 

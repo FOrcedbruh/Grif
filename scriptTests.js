@@ -80,32 +80,31 @@ addEventListener('resize', () => {
 
 // тесты 
 
-let Quiz = {
-    question1: "На каких уровнях модели OSI работает межсетевой экран ?",
-    answer1: "сетевой/транспортный",
-    answer2: "физический/сетевой",
-    answer3: "транспортный/канальный",
-    answer4: "канальный/прикладной",
-
-
-    question2: "Самый популярный язык программирования  ? ",
-    answer2_1: "JavaScript",
-    answer2_2: "C++",
-    answer2_3: "GO",
-    answer2_4: "Phython",
-
-    question3: " Основной ГОСТ по защите информации  ? ",
-    answer3_1: "50577-2018",
-    answer3_2: "50922-2006",
-    answer3_3: "50462-2009",
-    answer3_4: "53114-2008",
-
-    question4: "Основная библиотека JS ? ",
-    answer4_1: "VueJS",
-    answer4_2: "Lume",
-    answer4_3: "React",
-    answer4_4: "Phython",
-}
+let Quiz = [
+    question1 =  {
+       title: "На каких уровнях модели OSI работает межсетевой экран ?",
+        answers: ["сетевой/транспортный","физический/сетевой", "транспортный/канальный", "канальный/прикладной"],
+        correct: 3
+    },
+    
+    question2 = { 
+        title: "Самый популярный язык программирования  ? ",
+        answers: ["JavaScript", "C++", "GO", "Phython",],
+        correct: 4
+    },
+        
+    question3 = {
+        title: " Основной ГОСТ по защите информации  ? ",
+        answers: ["50577-2018", "50922-2006", "50462-2009", "53114-2008",],
+        correct: 2
+    },
+     
+    question4 = {
+        title: "Основная библиотека JS ? ",
+        answers: ["VueJS", "Lume", "React", "Phython",],
+        correct: 3
+    }
+]
 
 let question = document.querySelector('.question p');
 let answer_1 = document.querySelector('.answer1 p');
@@ -115,13 +114,42 @@ let answer_4 = document.querySelector('.answer4 p');
 
 let answerClick = document.querySelectorAll('.ans-clicker');
 
-let counter = 0;
+let step = 1;
+let ansCounter = 0;
+// результат теста 
 
+let Result = 0;
 
 answerClick.forEach(element => {
     element.addEventListener('click', () => {
-        counter++;
-        Tests();
+            question.innerHTML = Quiz[step].title;
+            answer_1.innerHTML = Quiz[step].answers[ansCounter];
+            answer_2.innerHTML = Quiz[step].answers[ansCounter+1];
+            answer_3.innerHTML = Quiz[step].answers[ansCounter+2];
+            answer_4.innerHTML = Quiz[step].answers[ansCounter+3];
+            step++;
+            if (step === 1) {
+                if (Quiz[step].correct === 3) {
+                    Result++;
+                }
+            }
+            if (step === 2) {
+                if (Quiz[step].correct === 4) {
+                    Result++;
+                }
+            }
+            if (step === 3) {
+                if (Quiz[step].correct === 3) {
+                    Result++;
+                }
+            }
+            if (step === 4) {
+                if (Quiz[step].correct === 3) {
+                    Result++;
+                }
+            }
+            
+            console.log(Result);
         });
         
    
@@ -136,36 +164,8 @@ StartBtn.addEventListener('click', () => {
     test.classList.add('active');
 });
 
-let Tests = () => {
-    if (counter == 0) {
-        question.innerHTML = Quiz.question1;
-        answer_1.innerHTML = Quiz.answer1;
-        answer_2.innerHTML = Quiz.answer2;
-        answer_3.innerHTML = Quiz.answer3;
-        answer_4.innerHTML = Quiz.answer4;
-    };
-    if (counter == 1) {
-        question.innerHTML = Quiz.question2;
-        answer_1.innerHTML = Quiz.answer2_1;
-        answer_2.innerHTML = Quiz.answer2_2;
-        answer_3.innerHTML = Quiz.answer2_3;
-        answer_4.innerHTML = Quiz.answer2_4;
-    };
-    if (counter == 2) {
-        question.innerHTML = Quiz.question3;
-        answer_1.innerHTML = Quiz.answer3_1;
-        answer_2.innerHTML = Quiz.answer3_2;
-        answer_3.innerHTML = Quiz.answer3_3;
-        answer_4.innerHTML = Quiz.answer3_4;
-    };
-    if (counter == 3) {
-        question.innerHTML = Quiz.question4;
-        answer_1.innerHTML = Quiz.answer4_1;
-        answer_2.innerHTML = Quiz.answer4_2;
-        answer_3.innerHTML = Quiz.answer4_3;
-        answer_4.innerHTML = Quiz.answer4_4;
-    };
-}
+
+
 
 
 
