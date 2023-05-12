@@ -100,6 +100,10 @@ burger.addEventListener('click', () => {
     })
     modalMenu.classList.toggle('active');
     settingsContainer.classList.remove('active');
+    settings.classList.remove('active-top');
+    allaInModalCards.forEach(e => {
+        e.classList.remove('opacity');
+    })
 });
 const logo = document.querySelector('.logo');
 
@@ -146,7 +150,10 @@ let options = {
     observer.observe(target);
   })
 
-// начтройки для новостей
+// наcтройки для новостей\
+
+
+let blurForNews = document.querySelector('.BlurforOpenNews');
 
   let firstNew = document.querySelector('.first-new p');
   let secondNew = document.querySelector('.second-new p');
@@ -169,16 +176,25 @@ let options = {
 
   news.addEventListener('click', () => {
     newsOpenContainer.classList.add('open');
+    blurForNews.classList.add('active');
   });
 
   newsOpenBack.addEventListener('click', () => {
     newsOpenContainer.classList.remove('open');
+    blurForNews.classList.remove('active');
   });
  window.addEventListener('keydown', (e) => {
     if (e.code === "Escape") {
         newsOpenContainer.classList.remove('open');
+        blurForNews.classList.remove('active');
     }
   });
+
+
+
+
+
+
 
 // настройка для музыки
 
@@ -212,6 +228,9 @@ minusVolume.addEventListener('click', () => {
 
 
 // modal settings 
+let allaInModalCards = document.querySelectorAll('.modal-cards a');
+
+
 
 
 
@@ -220,6 +239,10 @@ let settingsContainer = document.querySelector('.settings');
 
 settings.addEventListener('click', () => {
     settingsContainer.classList.toggle('active');
+    settings.classList.toggle('active-top');
+    allaInModalCards.forEach(e => {
+        e.classList.toggle('opacity');
+    })
 })
 
 

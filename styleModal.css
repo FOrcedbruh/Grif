@@ -31,6 +31,17 @@
     color: #FFFFFF;
     text-decoration: none;
     cursor: pointer;
+    transition: opacity .3s ease;
+}
+.modal-cards a.opacity:not(#settings) {
+    opacity: 0;
+    z-index: -1;
+}
+#settings {
+    transition: transform .4s ease-in-out;
+}
+#settings.active-top {
+    transform: translateY(-500%);
 }
 section.settings {
     display: flex;
@@ -38,16 +49,17 @@ section.settings {
     justify-content: flex-start;
     align-items: center;
     width: 80%;
-    min-height: 20%;
+    min-height: 60%;
     background-color: transparent;
     border: 2px solid #fff;
     border-radius: 40px;
-    gap: 3em;
     opacity: 0;
-    transition: opacity .5s ease;
+    transition: opacity .5s ease, transform .6s ease-in-out;
+    transform: translateY(0) rotateX(45deg)  rotateY(45deg);
 }
 section.settings.active {
     opacity: 1;
+    transform: translateY(-40%) rotateX(0) rotateY(0);
 }
 section.settings section {
     width: 100%;
@@ -130,4 +142,20 @@ section.settings section p span.doc-el {
 }
 #moon.active {
     transform: scale(0);
+}
+#logoutBtn {
+    font-family: 'Inter';
+    font-size: 14px;
+    background-color: #c038ff;
+    border: none;
+    outline: none;
+    width: 20%;
+    height: 20%;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+#logoutBtn:hover {
+    transform: scale(1.2);
 }
