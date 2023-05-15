@@ -89,9 +89,11 @@ section.BlurforOpenNews {
     position: fixed;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(20px);
+    background: transparent;
     z-index: -1;
+    transition: backdrop-filter .5s  0.1s ease;
 }
 section.BlurforOpenNews.active {
     z-index: 9;
+    backdrop-filter: blur(20px);
 }

@@ -8,9 +8,21 @@
 ::selection {
     background-color: rgba(174, 0, 255, 0.514);
 }
+body::-webkit-scrollbar {
+    background-color: #000000;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #c038ff;
+    border-radius: 10px;
+}
 body {
     margin: 0;
     height: 0;
+    -webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 .wrapper {
     margin: 0 auto;
@@ -100,8 +112,9 @@ body {
     justify-content: center;
     border: 2px solid rgba(165, 151, 179, 0.81);
     border-radius: 30px;
+    margin-top: 20%;
     width: 415px;
-    height: 80%;
+    height: 60%;
     opacity: 0;
     transition: opacity .4s ease-in  0.5s, transform ease-in-out  .5s;
     transform: scale(0.2);
@@ -279,7 +292,7 @@ p.sign-or-log a {
 }
 .signup-form.active {
     opacity: 1;
-    transform: translateX(-100%);
+    transform: translateX(-120%);
 }
 #sign-btn, #log-btn {
     cursor: pointer;

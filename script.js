@@ -39,6 +39,7 @@ goToLogin.addEventListener('click', () => {
     login.classList.add('active');
     loginForm.classList.add('active');
     HeaderWindowSignUp.classList.add('scale-active');
+    body.style.overflow = "hidden";
 })
 
 
@@ -46,7 +47,7 @@ closeLogin.addEventListener('click', ()=> {
     login.classList.remove('active');
     loginForm.classList.remove('active');
     HeaderWindowSignUp.classList.remove('scale-active');
-
+    body.style.overflow = "visible";
 })
 
 window.addEventListener('keydown', (e) => {
@@ -54,6 +55,7 @@ window.addEventListener('keydown', (e) => {
     login.classList.remove('active');
     loginForm.classList.remove('active');
     HeaderWindowSignUp.classList.remove('scale-active');
+    body.style.overflow = "visible";
    }
 })
 
@@ -177,16 +179,19 @@ let blurForNews = document.querySelector('.BlurforOpenNews');
   news.addEventListener('click', () => {
     newsOpenContainer.classList.add('open');
     blurForNews.classList.add('active');
+    body.style.overflow = "hidden";
   });
 
   newsOpenBack.addEventListener('click', () => {
     newsOpenContainer.classList.remove('open');
     blurForNews.classList.remove('active');
+    body.style.overflow = "visible";
   });
  window.addEventListener('keydown', (e) => {
     if (e.code === "Escape") {
         newsOpenContainer.classList.remove('open');
         blurForNews.classList.remove('active');
+        body.style.overflow = "visible";
     }
   });
 
@@ -246,36 +251,70 @@ settings.addEventListener('click', () => {
 })
 
 
-// тема 
+// Разработка анимированного текста 
 
-let styleCss = document.getElementById('styleCss');
-let styleMainCss = document.getElementById('styleCss');
-let styleModalCss = document.getElementById('styleCss');
-let styleOpenNewsCss = document.getElementById('styleCss');
 
-let themeSwitch = document.querySelector('.theme-switch');
-let moon = document.getElementById('moon');
-let sun = document.getElementById('sun');
 
-themeSwitch.addEventListener('click', () => {
-    sun.classList.toggle('active');
-    moon.classList.toggle('active');
-    if (styleCss.getAttribute('href') === 'style.css') {
-        styleCss.setAttribute('href', 'styleL.css');
-        styleMainCss.setAttribute('href', 'styleMainL.css');
-        styleModalCss.setAttribute('href', 'styleModalL.css');
-        styleOpenNewsCss.setAttribute('href', 'styleOpenNewsL.css');
-    if (styleCss.getAttribute('href') === "styleL.css") {
-        styleCss.setAttribute('href', 'style.css');
-        styleMainCss.setAttribute('href', 'styleMain.css');
-        styleModalCss.setAttribute('href', 'styleModal.css');
-        styleOpenNewsCss.setAttribute('href', 'styleOpenNews.css');
+
+const grif = document.querySelector('.grif');
+const grifBlock = document.querySelector('.grif-block');
+let animateText = document.querySelector('.animate-text');
+let blockContent = document.querySelector('.grif-block-content'); 
+
+
+window.addEventListener('scroll', () => {
+    let scrollTop = window.scrollY;
+    if (scrollTop > 1700) {
+        grif.classList.add('active');
+        grifBlock.classList.add('active');
     }
+    if (scrollTop > 1600 && scrollTop < 1700) {
+        body.style.overflow = 'hidden';
+        animateText.scrollIntoView({behavior: "smooth"});
     }
+    
+});
+
+
+let scrollBtn = document.querySelector('.scrollBottom');
+
+
+scrollBtn.addEventListener('click', () => {
+    grif.classList.remove('active');
+    grifBlock.classList.remove('active');
+    body.style.overflow = 'visible';
+    window.scrollBy(0, window.innerHeight);
 });
 
 
 
+logo.addEventListener('click', () => {
+    grif.classList.remove('active');
+    grifBlock.classList.remove('active');
+    body.style.overflow = 'visible';
+})
+
+
+
+// Разработка 3d карточек
+
+const card = document.querySelector('.card');
+
+
+card.addEventListener('mousemove', rotate);
+card.addEventListener('mouseout', () => {
+    const cardItem = document.querySelector('.cardItem');
+    cardItem.style.transform = "rotateX(0)";
+    cardItem.style.transform = "rotateY(0)";
+});
+
+
+function rotate(e) {
+    const cardItem = document.querySelector('.cardItem');
+    const halfHeight = cardItem.offsetHeight / 2;
+    const halfWidth = cardItem.offsetWidth / 2;
+    cardItem.style.transform = 'rotateX('+-(e.offsetY - halfHeight) / 8 +'deg) rotateY('+ (e.offsetX - halfWidth) / 16 +'deg)'
+}
 
 
 

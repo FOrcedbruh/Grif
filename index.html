@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grif | Main</title>
+    <link rel="icon" href="images/Favicon.ico">
     <link rel="stylesheet" href="style.css" id="styleCss">
     <link rel="stylesheet" href="styleMain.css" id="styleMainCss">
     <link rel="stylesheet" href="styleModal.css" id="styleModalCss">
@@ -60,15 +60,18 @@
                     </div>
                 </div>
                 <div class="small-top-section">
-                    <div class="first-small-top-section">
-                        <div class="title_news"><p>новости</p></div>
-                        <img src="images/line-news.svg">
-                        <div class="news">
-                            <div class="first-new"><p>Придумали, как сделать лампы накаливания  более энергоэффективными и долговечными<br><br><i>10 мая 2023 г.</i></p><img src="images/new1.svg"></div>
-                            <div class="second-new"><p>В России разработали систему для настройки оптимальной работы головного мозга<br><br><i>11 мая 2023 г.</i></p><img src="images/new2.svg"></div>
-                            <div class="third-new"><p>Проблема процессоров Intel<br><br><i>11 мая 2023 г.</i></p><img src="images/new3.svg"></div>
+                    <div class="card">
+                        <div class="first-small-top-section cardItem">
+                            <div class="title_news"><p>новости</p></div>
+                            <img src="images/line-news.svg">
+                            <div class="news">
+                                <div class="first-new"><p>Придумали, как сделать лампы накаливания  более энергоэффективными и долговечными<br><br><i>10 мая 2023 г.</i></p><img src="images/new1.svg"></div>
+                                <div class="second-new"><p>В России разработали систему для настройки оптимальной работы головного мозга<br><br><i>11 мая 2023 г.</i></p><img src="images/new2.svg"></div>
+                                <div class="third-new"><p>Проблема процессоров Intel<br><br><i>11 мая 2023 г.</i></p><img src="images/new3.svg"></div>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="second-small-top-section">
                         <div class="one-child-second-small">
                             <p>инженер по тестированию</p>
@@ -79,6 +82,21 @@
                     </div>
                 </div>
             </section>
+            <section class="animate-text">
+                <p class="grif">ГРИФ</p>
+                <section class="grif-block">
+                    <div class="grif-block-content">
+                        <img src="images/mvd-uni.jpg">
+                        <p>В связи с развитием информационных технологий и компьютеризацией экономики одним из важнейших вопросов в деятельности компании становится обеспечение информационной безопасности<br>
+
+                            Информация – это один из самых ценных и важных активов любого предприятия и должна быть надлежащим образом защищена</p>
+                        <button class="scrollBottom">
+                            tap to scroll
+                            <ion-icon name="chevron-down-outline" class="botArrow"></ion-icon>
+                        </button>
+                    </div>
+                </section>
+            </section>
             <section class="iphone">
                 <div class="left-iphone-div obs">
                     <p>
@@ -86,11 +104,11 @@
                         <br><br>Макеты справа показывают, как будет выглядеть набор кейсов по повышению знаний и компетенций в сфере информационной безопасности, на мобильных устройствах
                         Предусмотрена гибридная версия продукта предназначенная для Android /  IOS / LINUX /
                     </p>
-            </div>
-            <div class="iphone-jpegs obs">
-                <img src="images/iphone-1.svg">
-                <img src="images/iphone-2.svg">
-            </div>
+                </div>
+                <div class="iphone-jpegs obs">
+                    <img src="images/iphone-1.svg">
+                    <img src="images/iphone-2.svg">
+                </div>
             </section>
         </main>
         <footer>
@@ -188,13 +206,6 @@
                     <div class="volume">
                         <ion-icon name="add-outline" id="plus"></ion-icon>
                         <ion-icon name="remove-outline" id="minus"></ion-icon>
-                    </div>
-                </section>
-                <section class="theme">
-                    <p>Тема интерфейса</p>
-                    <div class="theme-switch">
-                        <ion-icon name="moon-outline" id="moon"></ion-icon>
-                        <ion-icon name="sunny-outline" id="sun"></ion-icon>
                     </div>
                 </section>
                 <section class="logout">
