@@ -115,6 +115,8 @@ window.addEventListener('scroll', () => {
     logo.classList.add('active');
     if (scrollTop === 0) {
         logo.classList.remove('active');
+        grif.classList.remove('intersecting');
+        grifBlock.classList.remove('intersecting');
     }
 })
 
@@ -263,20 +265,7 @@ let blockContent = document.querySelector('.grif-block-content');
 let topSection = document.querySelector('.top-section');
 
 
-window.addEventListener('scroll', () => {
-    let scrollTop = window.scrollY;
-    let TopsectionHeight = topSection.offsetHeight;
-    let GapHeight = animateText.style.marginTop;
-    if (scrollTop > TopsectionHeight + (GapHeight / 1.5)) {
-        grif.classList.add('active');
-        grifBlock.classList.add('active');
-    }
-    if (scrollTop > 1600 && scrollTop < 1700) {
-        body.style.overflow = 'hidden';
-        animateText.scrollIntoView({block: "center", behavior: "smooth"});
-    }
-    
-});
+
 
 
 let scrollBtn = document.querySelector('.scrollBottom');
