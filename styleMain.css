@@ -375,7 +375,7 @@ p.grif {
     color: #fff;
     font-size: 60vh;
     font-weight: bolder;
-    transition: font-size .8s 0.5s ease;
+    transition: font-size .8s 0.5s ease, color 1s 0.5s ease;
     font-family: 'Inter';
     user-select: none;
     letter-spacing: 0.1em;
@@ -387,6 +387,7 @@ section.grif-block.active {
 }
 p.grif.active {
     font-size: 20vh;
+    color: rgb(128, 69, 173);
 }
 .grif-block-content {
     height: 2000px;
@@ -400,13 +401,15 @@ p.grif.active {
     color: #fff;
     font-size: 30px;
     font-family: 'Inter';
-    text-align: center;
+    text-align: start;
     padding-left: 8%;
     line-height: 50px;
     padding-bottom: 35%;
 }
 .grif-block-content img {
-    width: 100%;
+    width: 80%;
+    border-radius: 10px;
+    margin-bottom: 10%;
 }
 .grif-block-content button{
     width: 60px;
@@ -417,6 +420,7 @@ p.grif.active {
     color: #fff;
     font-family: 'Inter';
     font-size: 20px;
+    font-weight: 600;
     transition: color .4s ease;
     cursor: pointer;
 }

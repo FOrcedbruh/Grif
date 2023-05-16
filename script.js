@@ -260,17 +260,20 @@ const grif = document.querySelector('.grif');
 const grifBlock = document.querySelector('.grif-block');
 let animateText = document.querySelector('.animate-text');
 let blockContent = document.querySelector('.grif-block-content'); 
+let topSection = document.querySelector('.top-section');
 
 
 window.addEventListener('scroll', () => {
     let scrollTop = window.scrollY;
-    if (scrollTop > 1700) {
+    let TopsectionHeight = topSection.offsetHeight;
+    let GapHeight = animateText.style.marginTop;
+    if (scrollTop > TopsectionHeight + (GapHeight / 1.5)) {
         grif.classList.add('active');
         grifBlock.classList.add('active');
     }
     if (scrollTop > 1600 && scrollTop < 1700) {
         body.style.overflow = 'hidden';
-        animateText.scrollIntoView({behavior: "smooth"});
+        animateText.scrollIntoView({block: "center", behavior: "smooth"});
     }
     
 });
@@ -313,7 +316,26 @@ function rotate(e) {
     const cardItem = document.querySelector('.cardItem');
     const halfHeight = cardItem.offsetHeight / 2;
     const halfWidth = cardItem.offsetWidth / 2;
-    cardItem.style.transform = 'rotateX('+-(e.offsetY - halfHeight) / 8 +'deg) rotateY('+ (e.offsetX - halfWidth) / 16 +'deg)'
+    cardItem.style.transform = 'rotateX('+-(e.offsetY - halfHeight) / 14 +'deg) rotateY('+ (e.offsetX - halfWidth) / 28 +'deg)'
+}
+
+
+const card_2 = document.querySelector('.card_2');
+
+
+card_2.addEventListener('mousemove', rotate);
+card_2.addEventListener('mouseout', () => {
+    const cardItem_2 = document.querySelector('.cardItem');
+    cardItem_2.style.transform = "rotateX(0)";
+    cardItem_2.style.transform = "rotateY(0)";
+});
+
+
+function rotate(e) {
+    const cardItem_2 = document.querySelector('.cardItem');
+    const halfHeight = cardItem_2.offsetHeight / 2;
+    const halfWidth = cardItem_2.offsetWidth / 2;
+    cardItem_2.style.transform = 'rotateX('+-(e.offsetY - halfHeight) / 14 +'deg) rotateY('+ (e.offsetX - halfWidth) / 28 +'deg)'
 }
 
 

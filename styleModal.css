@@ -31,7 +31,15 @@
     color: #FFFFFF;
     text-decoration: none;
     cursor: pointer;
-    transition: opacity .3s ease;
+    transition: opacity .3s ease, background-size .3s ease;
+    text-decoration: none;
+    background-image: linear-gradient(#A800F8, #A800F8);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+}
+.modal-cards a:hover {
+    background-size: 100% 2px;
 }
 .modal-cards a.opacity:not(#settings) {
     opacity: 0;
